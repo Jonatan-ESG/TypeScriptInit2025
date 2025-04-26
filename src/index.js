@@ -1,4 +1,4 @@
-function sumar(a: number, b: number): number {
+function sumar(a, b) {
     return a + b
 }
 
