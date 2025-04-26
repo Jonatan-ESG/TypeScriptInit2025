@@ -1,8 +1,5 @@
-function sumar(a: number, b: number): number {
-    return a + b
-}
+let nombre: string = 'Carlos'
+let edad: number = 22
+let activo: boolean = true
 
-console.log(sumar(5, 4))
-console.log(sumar(5, '4'))
-console.log(sumar('Hola ', 'amigos'))
-console.log(sumar(['h', 'o'], 5))
+console.log(`Nombre: ${nombre}, Edad: ${edad}, Activo: ${activo}`)
