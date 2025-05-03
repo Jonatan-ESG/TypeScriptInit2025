@@ -1,26 +1,30 @@
-// Sin POO
-let nombre = 'Pedro Gózalez'
-
-function saludar(nombre: string): void {
-    console.log(`Hola soy: ${nombre}`)
-}
-
-saludar(nombre)
-
-// Con POO
-
-class Persona {
+interface Usuario {
     nombre: string
-
-    constructor(nombre: string) {
-        this.nombre = nombre
-    }
-
-    saludar() {
-        console.log(`Hola soy: ${this.nombre}`)
-    }
+    edad: number
+    activo: boolean
+    correo?: string
+    // saludar: ()=>string
 }
 
-const pedro = new Persona('Pedro Goméz')
+interface CRUD {
+    crear: (registro: any) => any
+    actualizar: (registro: any, id: string) => any
+    elminar: (id: string) => any
+    leer: () => any[]
+}
 
-pedro.saludar()
+interface InformacionLogIn {
+    correo: string
+    clave: string
+    recaptcha: boolean
+}
+
+const usuarioUno: Usuario = {
+    nombre: 'Juan',
+    edad: 15,
+    activo: true,
+}
+
+function loguear(informacionLogin: InformacionLogIn) {
+    console.log(informacionLogin)
+}
