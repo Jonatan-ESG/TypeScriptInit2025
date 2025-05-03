@@ -1,51 +1,26 @@
-// Arreglos tipados
-let numeros: number[] = [1, 2, 3]
-numeros.push(4)
+// Sin POO
+let nombre = 'Pedro Gózalez'
 
-// [1, 2, 3, 4]
-
-let nombres: Array<string> = ['Juan', 'Luis', 'Pedro']
-
-// Tuplas
-let persona: [string, number, boolean] = ['Juan', 25, true]
-
-persona[2] = false
-
-//Enums
-enum ColorSemaforo {
-    Rojo,
-    Verde,
-    Amarillo,
+function saludar(nombre: string): void {
+    console.log(`Hola soy: ${nombre}`)
 }
 
-let estadoSemaforo: ColorSemaforo = ColorSemaforo.Amarillo
+saludar(nombre)
 
-console.log(estadoSemaforo)
+// Con POO
 
-enum EstadoPedido {
-    Nuevo = 'NewOrder',
-    Procesando = 'InProgress',
-    Completado = 'Completed',
+class Persona {
+    nombre: string
+
+    constructor(nombre: string) {
+        this.nombre = nombre
+    }
+
+    saludar() {
+        console.log(`Hola soy: ${this.nombre}`)
+    }
 }
 
-let estado: EstadoPedido = EstadoPedido.Completado
-console.log(estado)
+const pedro = new Persona('Pedro Goméz')
 
-enum HttpStatus {
-    BadRequest = 400,
-    Forbiden = 503,
-    Success = 200,
-    Created = 201,
-}
-
-let responseStatus: HttpStatus = HttpStatus.Created
-console.log(responseStatus)
-// Union Types
-
-function imprimir(valor: string | number) {
-    console.log(valor)
-}
-
-function calcularLongitud(valor: string | any[]): number {
-    return valor.length
-}
+pedro.saludar()
